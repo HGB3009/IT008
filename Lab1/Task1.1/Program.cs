@@ -75,9 +75,9 @@ namespace Myproject_Lab1
     {
         static public void Main(string[] args)
         {
-            Find_Max();
+            Find_Max_Min();
         }
-        static public void Find_Max()
+        static public void Find_Max_Min()
         {
             CustomDataType A = new CustomDataType();
 
