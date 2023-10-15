@@ -1,0 +1,14 @@
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\bin\Debug\net7.0\Task1.1.exe
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\bin\Debug\net7.0\Task1.1.deps.json
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\bin\Debug\net7.0\Task1.1.runtimeconfig.json
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\bin\Debug\net7.0\Task1.1.dll
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\bin\Debug\net7.0\Task1.1.pdb
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.GeneratedMSBuildEditorConfig.editorconfig
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.AssemblyInfoInputs.cache
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.AssemblyInfo.cs
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.csproj.CoreCompileInputs.cache
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.dll
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\refint\Task1.1.dll
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.pdb
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\Task1.1.genruntimeconfig.cache
+D:\OneDrive Data\OneDrive - Trường ĐH CNTT - University of Information Technology\HK3\Visual Programming - IT008.O14\Lab\IT008\Lab1\Task1.1\obj\Debug\net7.0\ref\Task1.1.dll
