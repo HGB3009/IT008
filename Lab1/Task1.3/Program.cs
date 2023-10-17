@@ -54,9 +54,13 @@ namespace Myproject_Lab1
         public string Min(string[] strings)
         {
             string minValue = "";
+            int MinLength = Int32.MaxValue;
             for (int i = 0; i < strings.Length; ++i)
-                if (minValue.Length < strings[i].Length)
+                if (MinLength > strings[i].Length)
+                {
+                    MinLength = strings[i].Length;
                     minValue = strings[i];
+                }
             return minValue;
         }
         public void Input(int n, string[] temp)
@@ -82,8 +86,8 @@ namespace Myproject_Lab1
             CustomDataType A = new CustomDataType();
 
             Console.WriteLine("*/ 1. Mang kieu so nguyen");
-            Console.WriteLine("  2. Mang kieu so thuc");
-            Console.WriteLine("  3. Mang kieu string /*");
+            Console.WriteLine("   2. Mang kieu so thuc");
+            Console.WriteLine("   3. Mang kieu string   /*");
 
             Console.Write("Chon kieu du lieu: ");
             string readData = Console.ReadLine();
