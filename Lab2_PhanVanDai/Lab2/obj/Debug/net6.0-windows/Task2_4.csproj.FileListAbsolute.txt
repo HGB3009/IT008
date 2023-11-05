@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\bin\Debug\net6.0-windows\Task2_4.exe
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\bin\Debug\net6.0-windows\Task2_4.deps.json
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\bin\Debug\net6.0-windows\Task2_4.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\bin\Debug\net6.0-windows\Task2_4.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\bin\Debug\net6.0-windows\Task2_4.pdb
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Lab2.Form1.resources
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\refint\Task2_4.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.pdb
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\Task2_4.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\Lab2\obj\Debug\net6.0-windows\ref\Task2_4.dll
