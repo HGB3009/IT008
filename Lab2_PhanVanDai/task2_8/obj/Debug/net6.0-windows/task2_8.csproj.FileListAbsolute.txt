@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\bin\Debug\net6.0-windows\task2_8.exe
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\bin\Debug\net6.0-windows\task2_8.deps.json
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\bin\Debug\net6.0-windows\task2_8.runtimeconfig.json
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\bin\Debug\net6.0-windows\task2_8.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\bin\Debug\net6.0-windows\task2_8.pdb
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.Form1.resources
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\refint\task2_8.dll
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.pdb
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\task2_8.genruntimeconfig.cache
+C:\Users\Admin\Documents\GitHub\IT008\Lab2_PhanVanDai\task2_8\obj\Debug\net6.0-windows\ref\task2_8.dll
