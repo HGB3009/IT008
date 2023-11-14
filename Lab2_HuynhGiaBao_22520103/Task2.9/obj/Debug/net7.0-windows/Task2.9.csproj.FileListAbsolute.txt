@@ -14,3 +14,5 @@ C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debu
 C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debug\net7.0-windows\Task2.9.pdb
 C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debug\net7.0-windows\Task2.9.genruntimeconfig.cache
 C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debug\net7.0-windows\ref\Task2.9.dll
+C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debug\net7.0-windows\Task2._9.loginForm.resources
+C:\Users\baoba\Documents\GitHub\IT008\Lab2_HuynhGiaBao_22520103\Task2.9\obj\Debug\net7.0-windows\Task2._9.registerForm.resources
