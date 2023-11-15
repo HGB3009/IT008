@@ -1,3 +1,5 @@
+using System.Drawing.Drawing2D;
+
 namespace task2_8
 {
     public partial class Form1 : Form
@@ -12,7 +14,7 @@ namespace task2_8
         Color color=Color.Black;
         float size_pen = 2;
         int shape = 0;
-
+        Rectangle rect;
         private bool isDragging = false;
         private Point offset;
         public Form1()
@@ -25,6 +27,7 @@ namespace task2_8
             this.MouseMove += MovePicture_MouseMove;
             this.MouseUp += MovePicture_MouseUp;
             this.Paint += new PaintEventHandler(this.Paint_Handler);
+            rect = new Rectangle(x, y, width, height);
         }
 
         private void FreeHand_MouseDown(object sender, MouseEventArgs e)
@@ -38,18 +41,26 @@ namespace task2_8
             }
         }
 
-        private void Paint_Handler(object sender,PaintEventArgs e)
+        private void Paint_Handler(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-           
-                Pen pen=new Pen(color, size_pen);
-                g.DrawRectangle(pen, x, y, width, height);
-          
-           
-                Pen pen = new Pen(color, size_pen);
-                g.DrawEllipse(pen, x, y, width, height);
-         
-           // shape = 0;
+                Graphics g = e.Graphics;
+            Pen outline=new Pen(Color.LightBlue, 1);
+            outline.StartCap=LineCap.Round;
+            outline.EndCap=LineCap.ArrowAnchor;
+            
+            if (shape == 1)
+            {
+                g.DrawRectangle(outline, x, y, width, height);
+                drawingPen = new Pen(color, size_pen);
+                g.DrawRectangle(drawingPen, x, y, width, height);
+            }
+            else if (shape == 2)
+            {
+                g.DrawRectangle(outline, x, y, width, height);
+                drawingPen = new Pen(color, size_pen);
+                g.DrawEllipse(drawingPen, x, y, width, height);
+            }
+            shape = 0;
         }
         private void FreeHand_MouseMove(object sender, MouseEventArgs e)
         {
@@ -124,22 +135,30 @@ namespace task2_8
             if(e.X>=x&&e.X<=x+width&&e.Y>=y&&e.Y<=e.Y+height)
             {
                 isDragging = true;
-                offset = new Point(e.X-x,e.Y-y);
             }
         }
         private void MovePicture_MouseMove(object sender,MouseEventArgs e)
         {
             if(isDragging)
             {
-                x = e.X - offset.X;
-                y = e.Y - offset.Y;
-                Rectangle rect = new Rectangle(x, y, width, height);
-                this.Invalidate(rect);
+                x = e.X - width/2;
+                y = e.Y - height/2;
             }
         }
         private void MovePicture_MouseUp(object sender, MouseEventArgs e)
         {
-            isDragging =false;
+            if (isDragging)
+            {
+                isDragging = false;
+                rect.Location = new Point(e.X, e.Y);
+            }
+        }
+
+        private void FormTimerEvents(object sender, EventArgs e)
+        {
+            rect.X = x;
+            rect.Y = y;
+            this.Invalidate();
         }
     }
 }

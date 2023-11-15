@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,6 +36,7 @@
             this.eclipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Size_comboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +98,11 @@
             this.Size_comboBox.Size = new System.Drawing.Size(75, 28);
             this.Size_comboBox.Text = "Size";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.FormTimerEvents);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -122,5 +129,6 @@
         private ToolStripMenuItem eclipToolStripMenuItem;
         private ToolStripMenuItem colorToolStripMenuItem;
         private ToolStripComboBox Size_comboBox;
+        private System.Windows.Forms.Timer timer1;
     }
 }
