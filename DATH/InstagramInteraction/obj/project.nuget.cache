@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "yweaO6hgA+sv+7nMa92WzuwbNx9L+gEWct1Dj8ngOVDzAQxP8L1XTLNOJ6+qalWXnb9kGbTnuByEBPB28407hA==",
+  "dgSpecHash": "p7H5ZcC4IcXGUtUWumsng+5YB6gcdMng4c4LHelvSfgN34nkfzKk8JzJ9VquAFu1esfmi/w4f9ZN0E+tnC5KSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\baoba\\Documents\\GitHub\\IT008\\DATH\\InstagramInteraction\\InstagramInteraction.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\baoba\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\baoba\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\baoba\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
+    "C:\\Users\\baoba\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
