@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace InstagramInteraction
 {
@@ -17,18 +18,23 @@ namespace InstagramInteraction
             driver = new ChromeDriver();
         }
 
-        public void Login(string username, string password)
+        public bool Login(string username, string password)
         {
-            // Mở trang đăng nhập
+            
             driver.Navigate().GoToUrl("https://www.instagram.com/accounts/login/");
            
-            IWebElement usernameInput = driver.FindElement(By.Name("username"));
-            IWebElement passwordInput = driver.FindElement(By.Name("password"));
+            IWebElement usernameInput = driver.FindElement(By.Name("Phone number, username"));
+            IWebElement passwordInput = driver.FindElement(By.Name("Password"));
             IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
 
             usernameInput.SendKeys(username);
             passwordInput.SendKeys(password);
             loginButton.Click();
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+            wait.Until(driver => driver.Url.Contains("https://www.instagram.com/"));
+
+            return driver.Url.Contains("instagram.com");
+
         }
         public void AutoLike(string targetUsername)
         {

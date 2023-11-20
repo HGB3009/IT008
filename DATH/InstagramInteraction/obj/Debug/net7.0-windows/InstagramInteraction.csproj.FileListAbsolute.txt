@@ -22,3 +22,4 @@ C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.pdb
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.genruntimeconfig.cache
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\ref\InstagramInteraction.dll
+C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\bin\Debug\net7.0-windows\WebDriver.Support.dll

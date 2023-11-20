@@ -17,11 +17,22 @@ namespace InstagramInteraction
         public loginForm()
         {
             InitializeComponent();
+            itgbot = new instagramBot();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            itgbot.Login(usernameTextBox.Text, passwordTextBox.Text);
+            if (itgbot.Login(usernameTextBox.Text, passwordTextBox.Text))
+            {
+                this.SuccessfulLogin?.Invoke(this, EventArgs.Empty);
+                MessageBox.Show("Login success!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.");
+            }
+            
         }
     }
 }
