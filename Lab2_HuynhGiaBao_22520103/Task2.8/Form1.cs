@@ -68,11 +68,11 @@ namespace Task2._8
             }
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            startPoint = e.Location;
-            isDrawing = true;
-        }
+            private void Form1_MouseDown(object sender, MouseEventArgs e)
+            {
+                startPoint = e.Location;
+                isDrawing = true;
+            }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
