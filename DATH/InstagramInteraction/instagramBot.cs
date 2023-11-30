@@ -43,7 +43,23 @@ namespace InstagramInteraction
         }
         public void AutoComment(string targetUsername, string comment)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
             driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+
+            var posts = driver.FindElements(By.CssSelector("div._aagw"));
+
+            foreach (var post in posts)
+            {
+                post.Click();
+
+                IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
+                commentButton.Click();
+
+
+            }
         }
 
         public void AutoLike(string targetUsername)
@@ -61,22 +77,21 @@ namespace InstagramInteraction
                 post.Click();
 
                 //Check if the post already be liked
-                bool isLiked = driver.FindElements(By.CssSelector("span._aamw svg[aria-label='Like'].filled-heart")).Any();
+                bool isLiked = driver.FindElements(By.CssSelector("span._aamw svg[aria-label='Like']")).Any();
 
-                if (!isLiked)
+                if (isLiked)
                 {
                     driver.FindElement(By.CssSelector("span._aamw svg[aria-label='Like']")).Click();
-                
                 }
                 // Wait for the like action to complete
-                Task.Delay(2000).Wait();
+                Task.Delay(1000).Wait();
 
                 //Click on the close button
-                IWebElement closeButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div.x1i10hfl button")));
+                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.x6s0dn4.xjbqb8w.x1ejq31n.xd10rxx.x1sy0etr.x17r0tee.x1ypdohk.x78zum5.xl56j7k.x1y1aw1k.x1sxyh0.xwib8y2.xurb0ha.xcdnw81[role='button']"));
                 closeButton.Click();
 
                 // Wait for the next post to be visible
-                Task.Delay(5000).Wait();
+                Task.Delay(2000).Wait();
 
             }
         }
