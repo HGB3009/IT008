@@ -2,31 +2,26 @@ namespace InstagramInteraction
 {
     public partial class Form1 : Form
     {
-        private bool isLoggedIn = false;
+        instagramBot itgbot;
         public Form1()
         {
             InitializeComponent();
-            this.Load += Form1_Load;
+            itgbot = new instagramBot();
+        }
+        private void autoLogin()
+        {
+            itgbot.Login(usernameLoginInput.Text, passwordLoginInput.Text);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void autoDown_Click(object sender, EventArgs e)
         {
-            ShowLoginForm();
-        }
-        private void ShowLoginForm()
-        {
-            var loginForm = new loginForm();
-            loginForm.SuccessfulLogin += LoginForm_SuccessfulLogin;
-            loginForm.ShowDialog();
 
-            if (!isLoggedIn)
-            {
-                Close();
-            }
         }
-        private void LoginForm_SuccessfulLogin(object sender, EventArgs e)
+
+        private void autoLikeButton_Click(object sender, EventArgs e)
         {
-            isLoggedIn = true;
+            autoLogin();
+            itgbot.AutoLike(usernameInteractedInput.Text);
         }
     }
 }

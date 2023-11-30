@@ -1,6 +1,5 @@
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.csproj.AssemblyReference.cache
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.Form1.resources
-C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.loginForm.resources
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.csproj.GenerateResource.cache
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\baoba\Documents\GitHub\IT008\DATH\InstagramInteraction\obj\Debug\net7.0-windows\InstagramInteraction.AssemblyInfoInputs.cache
