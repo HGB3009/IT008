@@ -106,6 +106,7 @@
             autoCmtButton.TabIndex = 14;
             autoCmtButton.Text = "Tự động bình luận";
             autoCmtButton.UseVisualStyleBackColor = true;
+            autoCmtButton.Click += autoCmtButton_Click;
             // 
             // groupBox5
             // 
@@ -136,6 +137,7 @@
             autoFollowButton.TabIndex = 15;
             autoFollowButton.Text = "Tự động follow";
             autoFollowButton.UseVisualStyleBackColor = true;
+            autoFollowButton.Click += autoFollowButton_Click;
             // 
             // autoLikeButton
             // 
@@ -188,6 +190,7 @@
             // 
             passwordLoginInput.Location = new Point(39, 109);
             passwordLoginInput.Name = "passwordLoginInput";
+            passwordLoginInput.PasswordChar = '*';
             passwordLoginInput.PlaceholderText = "Password";
             passwordLoginInput.Size = new Size(298, 30);
             passwordLoginInput.TabIndex = 9;
