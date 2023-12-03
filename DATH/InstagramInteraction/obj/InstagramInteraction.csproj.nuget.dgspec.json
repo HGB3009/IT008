@@ -56,6 +56,10 @@
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.15.0, )"
+            },
+            "Selenium.WebDriverBackedSelenium": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             }
           },
           "imports": [

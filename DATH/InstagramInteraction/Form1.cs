@@ -7,7 +7,9 @@ namespace InstagramInteraction
     public partial class Form1 : Form
     {
         instagramBot itgbot;
-        bool alreadyLogin;
+        bool alreadyLogin = false;
+        string loginUsernameNow;
+        string loginPasswordNow;
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +17,28 @@ namespace InstagramInteraction
         }
         private void autoLogin()
         {
-            itgbot.Login(usernameLoginInput.Text, passwordLoginInput.Text);
+            if (!alreadyLogin)
+            {
+                loginUsernameNow = usernameLoginInput.Text;
+                loginPasswordNow = passwordLoginInput.Text;
+                itgbot.Login(loginUsernameNow, loginPasswordNow);
+                alreadyLogin = true;
+            }
+            else
+            {
+                if (usernameLoginInput.Text != loginUsernameNow)
+                {
+                    itgbot.Logout();
+                    loginUsernameNow = usernameLoginInput.Text;
+                    loginPasswordNow = passwordLoginInput.Text;
+                    itgbot.Login(loginUsernameNow, loginPasswordNow);
+                }
+            }
+            
+        }
+        private void autoLogout()
+        {
+            itgbot.Logout();
         }
         private void autoLikeButton_Click(object sender, EventArgs e)
         {
@@ -46,7 +69,7 @@ namespace InstagramInteraction
         }
         private void autoDown_Click(object sender, EventArgs e)
         {
-            //autoLogin();
+            autoLogin();
             string downloadFolder = GetDownloadFolder();
             itgbot.AutoDownPicCmt(usernameInteractedInput.Text, downloadFolder);
         }
@@ -68,6 +91,12 @@ namespace InstagramInteraction
                 //return a 
                 return Environment.CurrentDirectory;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            autoLogin();
+            autoLogout();
         }
     }
 }

@@ -30,7 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             groupBox1 = new GroupBox();
+            groupBox3 = new GroupBox();
+            usernameLoginInput = new TextBox();
+            passwordLoginInput = new TextBox();
+            groupBox4 = new GroupBox();
+            usernameInteractedInput = new TextBox();
             groupBox2 = new GroupBox();
+            groupBox7 = new GroupBox();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            numericUpDown1 = new NumericUpDown();
+            richTextBox1 = new RichTextBox();
             groupBox6 = new GroupBox();
             cmtInput = new RichTextBox();
             autoCmtButton = new Button();
@@ -38,142 +52,37 @@
             usernameListInput = new RichTextBox();
             autoFollowButton = new Button();
             autoLikeButton = new Button();
-            groupBox4 = new GroupBox();
-            usernameInteractedInput = new TextBox();
-            groupBox3 = new GroupBox();
-            usernameLoginInput = new TextBox();
-            passwordLoginInput = new TextBox();
             autoDownloadButton = new Button();
+            groupBox1.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox4.SuspendLayout();
             groupBox2.SuspendLayout();
+            groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBox6.SuspendLayout();
             groupBox5.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(groupBox4);
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(782, 197);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Bão Tim";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(groupBox6);
-            groupBox2.Controls.Add(groupBox5);
-            groupBox2.Controls.Add(autoLikeButton);
-            groupBox2.Controls.Add(groupBox4);
-            groupBox2.Controls.Add(groupBox3);
-            groupBox2.Controls.Add(autoDownloadButton);
-            groupBox2.Dock = DockStyle.Fill;
-            groupBox2.Location = new Point(0, 197);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(782, 756);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Các chức năng khác";
-            // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(cmtInput);
-            groupBox6.Controls.Add(autoCmtButton);
-            groupBox6.Dock = DockStyle.Bottom;
-            groupBox6.Location = new Point(3, 281);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(776, 238);
-            groupBox6.TabIndex = 16;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Nhập các câu bình luận:";
-            // 
-            // cmtInput
-            // 
-            cmtInput.Dock = DockStyle.Left;
-            cmtInput.Location = new Point(3, 26);
-            cmtInput.Name = "cmtInput";
-            cmtInput.Size = new Size(501, 209);
-            cmtInput.TabIndex = 15;
-            cmtInput.Text = "";
-            // 
-            // autoCmtButton
-            // 
-            autoCmtButton.Location = new Point(558, 103);
-            autoCmtButton.Name = "autoCmtButton";
-            autoCmtButton.Size = new Size(153, 55);
-            autoCmtButton.TabIndex = 14;
-            autoCmtButton.Text = "Tự động bình luận";
-            autoCmtButton.UseVisualStyleBackColor = true;
-            autoCmtButton.Click += autoCmtButton_Click;
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(usernameListInput);
-            groupBox5.Controls.Add(autoFollowButton);
-            groupBox5.Dock = DockStyle.Bottom;
-            groupBox5.Location = new Point(3, 519);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(776, 234);
-            groupBox5.TabIndex = 15;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Nhập danh sách các user cần follow:";
-            // 
-            // usernameListInput
-            // 
-            usernameListInput.Dock = DockStyle.Left;
-            usernameListInput.Location = new Point(3, 26);
-            usernameListInput.Name = "usernameListInput";
-            usernameListInput.Size = new Size(501, 205);
-            usernameListInput.TabIndex = 16;
-            usernameListInput.Text = "";
-            // 
-            // autoFollowButton
-            // 
-            autoFollowButton.Location = new Point(558, 103);
-            autoFollowButton.Name = "autoFollowButton";
-            autoFollowButton.Size = new Size(153, 55);
-            autoFollowButton.TabIndex = 15;
-            autoFollowButton.Text = "Tự động follow";
-            autoFollowButton.UseVisualStyleBackColor = true;
-            autoFollowButton.Click += autoFollowButton_Click;
-            // 
-            // autoLikeButton
-            // 
-            autoLikeButton.Location = new Point(484, 220);
-            autoLikeButton.Name = "autoLikeButton";
-            autoLikeButton.Size = new Size(153, 55);
-            autoLikeButton.TabIndex = 13;
-            autoLikeButton.Text = "Tự động like";
-            autoLikeButton.UseVisualStyleBackColor = true;
-            autoLikeButton.Click += autoLikeButton_Click;
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(usernameInteractedInput);
-            groupBox4.Location = new Point(412, 29);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(364, 175);
-            groupBox4.TabIndex = 12;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Nhập username cần tương tác:";
-            // 
-            // usernameInteractedInput
-            // 
-            usernameInteractedInput.Location = new Point(33, 76);
-            usernameInteractedInput.Name = "usernameInteractedInput";
-            usernameInteractedInput.PlaceholderText = "Username";
-            usernameInteractedInput.Size = new Size(298, 30);
-            usernameInteractedInput.TabIndex = 11;
+            groupBox1.Text = "Nhập thông tin";
             // 
             // groupBox3
             // 
             groupBox3.Controls.Add(usernameLoginInput);
             groupBox3.Controls.Add(passwordLoginInput);
-            groupBox3.Location = new Point(0, 29);
+            groupBox3.Dock = DockStyle.Left;
+            groupBox3.Location = new Point(3, 26);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(406, 175);
+            groupBox3.Size = new Size(406, 168);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
             groupBox3.Text = "Nhập account dùng để thực hiện chức năng";
@@ -195,9 +104,201 @@
             passwordLoginInput.Size = new Size(298, 30);
             passwordLoginInput.TabIndex = 9;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(usernameInteractedInput);
+            groupBox4.Dock = DockStyle.Right;
+            groupBox4.Location = new Point(415, 26);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(364, 168);
+            groupBox4.TabIndex = 12;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Nhập username cần tương tác:";
+            // 
+            // usernameInteractedInput
+            // 
+            usernameInteractedInput.Location = new Point(33, 76);
+            usernameInteractedInput.Name = "usernameInteractedInput";
+            usernameInteractedInput.PlaceholderText = "Username";
+            usernameInteractedInput.Size = new Size(298, 30);
+            usernameInteractedInput.TabIndex = 11;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(groupBox7);
+            groupBox2.Controls.Add(groupBox6);
+            groupBox2.Controls.Add(groupBox5);
+            groupBox2.Controls.Add(autoLikeButton);
+            groupBox2.Controls.Add(autoDownloadButton);
+            groupBox2.Dock = DockStyle.Fill;
+            groupBox2.Location = new Point(0, 197);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(782, 756);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Các chức năng khác";
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(label3);
+            groupBox7.Controls.Add(label2);
+            groupBox7.Controls.Add(label1);
+            groupBox7.Controls.Add(textBox2);
+            groupBox7.Controls.Add(textBox1);
+            groupBox7.Controls.Add(button1);
+            groupBox7.Controls.Add(numericUpDown1);
+            groupBox7.Controls.Add(richTextBox1);
+            groupBox7.Dock = DockStyle.Bottom;
+            groupBox7.Location = new Point(3, 91);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(776, 246);
+            groupBox7.TabIndex = 17;
+            groupBox7.TabStop = false;
+            groupBox7.Text = "Bão tim";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(483, 138);
+            label3.Name = "label3";
+            label3.Size = new Size(153, 23);
+            label3.TabIndex = 23;
+            label3.Text = "Thời gian kết thúc:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(483, 96);
+            label2.Name = "label2";
+            label2.Size = new Size(149, 23);
+            label2.TabIndex = 22;
+            label2.Text = "Thời gian bắt đầu:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(483, 54);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 23);
+            label1.TabIndex = 21;
+            label1.Text = "Nhập số tim:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(638, 135);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 30);
+            textBox2.TabIndex = 20;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(638, 93);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 30);
+            textBox1.TabIndex = 19;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(549, 171);
+            button1.Name = "button1";
+            button1.Size = new Size(153, 55);
+            button1.TabIndex = 18;
+            button1.Text = "Bão tim";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(613, 52);
+            numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(150, 30);
+            numericUpDown1.TabIndex = 1;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Dock = DockStyle.Left;
+            richTextBox1.Location = new Point(3, 26);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(474, 217);
+            richTextBox1.TabIndex = 0;
+            richTextBox1.Text = "";
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(cmtInput);
+            groupBox6.Controls.Add(autoCmtButton);
+            groupBox6.Dock = DockStyle.Bottom;
+            groupBox6.Location = new Point(3, 337);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(776, 207);
+            groupBox6.TabIndex = 16;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "Nhập các câu bình luận:";
+            // 
+            // cmtInput
+            // 
+            cmtInput.Dock = DockStyle.Left;
+            cmtInput.Location = new Point(3, 26);
+            cmtInput.Name = "cmtInput";
+            cmtInput.Size = new Size(474, 178);
+            cmtInput.TabIndex = 15;
+            cmtInput.Text = "";
+            // 
+            // autoCmtButton
+            // 
+            autoCmtButton.Location = new Point(558, 85);
+            autoCmtButton.Name = "autoCmtButton";
+            autoCmtButton.Size = new Size(153, 55);
+            autoCmtButton.TabIndex = 14;
+            autoCmtButton.Text = "Tự động bình luận";
+            autoCmtButton.UseVisualStyleBackColor = true;
+            autoCmtButton.Click += autoCmtButton_Click;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(usernameListInput);
+            groupBox5.Controls.Add(autoFollowButton);
+            groupBox5.Dock = DockStyle.Bottom;
+            groupBox5.Location = new Point(3, 544);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(776, 209);
+            groupBox5.TabIndex = 15;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Nhập danh sách các user cần follow:";
+            // 
+            // usernameListInput
+            // 
+            usernameListInput.Dock = DockStyle.Left;
+            usernameListInput.Location = new Point(3, 26);
+            usernameListInput.Name = "usernameListInput";
+            usernameListInput.Size = new Size(474, 180);
+            usernameListInput.TabIndex = 16;
+            usernameListInput.Text = "";
+            // 
+            // autoFollowButton
+            // 
+            autoFollowButton.Location = new Point(558, 91);
+            autoFollowButton.Name = "autoFollowButton";
+            autoFollowButton.Size = new Size(153, 55);
+            autoFollowButton.TabIndex = 15;
+            autoFollowButton.Text = "Tự động follow";
+            autoFollowButton.UseVisualStyleBackColor = true;
+            autoFollowButton.Click += autoFollowButton_Click;
+            // 
+            // autoLikeButton
+            // 
+            autoLikeButton.Location = new Point(448, 29);
+            autoLikeButton.Name = "autoLikeButton";
+            autoLikeButton.Size = new Size(153, 55);
+            autoLikeButton.TabIndex = 13;
+            autoLikeButton.Text = "Tự động like";
+            autoLikeButton.UseVisualStyleBackColor = true;
+            autoLikeButton.Click += autoLikeButton_Click;
+            // 
             // autoDownloadButton
             // 
-            autoDownloadButton.Location = new Point(151, 220);
+            autoDownloadButton.Location = new Point(148, 29);
             autoDownloadButton.Name = "autoDownloadButton";
             autoDownloadButton.Size = new Size(153, 55);
             autoDownloadButton.TabIndex = 3;
@@ -217,13 +318,17 @@
             Margin = new Padding(4);
             Name = "Form1";
             Text = "Instagram Interaction Tool";
-            groupBox2.ResumeLayout(false);
-            groupBox6.ResumeLayout(false);
-            groupBox5.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
+            groupBox1.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            groupBox6.ResumeLayout(false);
+            groupBox5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -244,5 +349,14 @@
         private Button autoFollowButton;
         private RichTextBox cmtInput;
         private RichTextBox usernameListInput;
+        private GroupBox groupBox7;
+        private NumericUpDown numericUpDown1;
+        private RichTextBox richTextBox1;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label3;
+        private Label label2;
+        private Label label1;
     }
 }
