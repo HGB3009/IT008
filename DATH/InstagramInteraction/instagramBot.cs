@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.DevTools.V117.Debugger;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
@@ -45,118 +46,154 @@ namespace InstagramInteraction
             catch (NoSuchElementException)
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
-                IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
-                notNowButton1.Click();
+                try
+                {
+                    IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
+                    notNowButton1.Click();
 
-                IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
-                notNowButton2.Click();
+                    IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
+                    notNowButton2.Click();
+                } 
+                
+                catch (NoSuchElementException)
+                {
+                    
+                }
                 return true;
             }
         }
         public void Logout()
         {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            IWebElement settingButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div.x9f619.xxk0z11.xii2z7h.x11xpdln.x19c4wfv.xvy4d1p > svg[aria-label='Settings']")));
-            settingButton.Click();
-
-            IWebElement LogoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[contains(@class, 'x9f619') and contains(@class, 'xjbqb8w') and contains(@class, 'x78zum5') and contains(@class, 'x168nmei') and contains(@class, 'x13lgxp2') and contains(@class, 'x5pf9jr') and contains(@class, 'xo71vjh') and contains(@class, 'x1uhb9sk') and contains(@class, 'x1plvlek') and contains(@class, 'xryxfnj') and contains(@class, 'x1iyjqo2') and contains(@class, 'x2lwn1j') and contains(@class, 'xeuugli') and contains(@class, 'xdt5ytf') and contains(@class, 'xqjyukv') and contains(@class, 'x1cy8zhl') and contains(@class, 'x1oa3qoh') and contains(@class, 'x1nhvcw1')]//span[text()='Log out']")));
-            LogoutButton.Click();
-        }
-
-        public void AutoComment(string targetUsername, string comment)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-            driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
-
-            //Select each post
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            ScrollDown(js);
-
-            var posts = driver.FindElements(By.CssSelector("div._aagw"));
-
-            //Choose a random cmt
-            string[] lines = comment.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-            Random random = new Random();
-            
-
-            foreach (var post in posts)
+            try
             {
-                wait.Until(ExpectedConditions.ElementToBeClickable(post));
-                js.ExecuteScript("arguments[0].click();", post);
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                IWebElement settingButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div.x9f619.xxk0z11.xii2z7h.x11xpdln.x19c4wfv.xvy4d1p > svg[aria-label='Settings']")));
+                settingButton.Click();
 
-                try
-                {
-                    IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
-                    commentButton.Click();
-                }
-                catch (NoSuchElementException)
-                {
-                    continue;
-                }
+                IWebElement LogoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[contains(@class, 'x9f619') and contains(@class, 'xjbqb8w') and contains(@class, 'x78zum5') and contains(@class, 'x168nmei') and contains(@class, 'x13lgxp2') and contains(@class, 'x5pf9jr') and contains(@class, 'xo71vjh') and contains(@class, 'x1uhb9sk') and contains(@class, 'x1plvlek') and contains(@class, 'xryxfnj') and contains(@class, 'x1iyjqo2') and contains(@class, 'x2lwn1j') and contains(@class, 'xeuugli') and contains(@class, 'xdt5ytf') and contains(@class, 'xqjyukv') and contains(@class, 'x1cy8zhl') and contains(@class, 'x1oa3qoh') and contains(@class, 'x1nhvcw1')]//span[text()='Log out']")));
+                js.ExecuteScript("arguments[0].click();", LogoutButton);
 
-                //Random comment
-                int randomIndex = random.Next(0, lines.Length);
-                string randomcmt = lines[randomIndex];
-                IWebElement cmtInput = driver.FindElement(By.CssSelector("textarea[aria-label='Add a comment…']"));
-                cmtInput.SendKeys(randomcmt);
-
-                IWebElement postButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div._am-5 div.x1i10hfl[role='button']")));
-                postButton.Click();
-
-                // Wait for the action to complete
-                Task.Delay(1000).Wait();
-
-                //Click on the close button
-                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
-
-                js.ExecuteScript("arguments[0].click();", closeButton);
-
-                // Wait for the next post to be visible
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+                IWebElement loginbutton = driver.FindElement(By.CssSelector("input[type=\"button\"][name=\"login\"][value=\"Log In\"]"));
+                loginbutton.Click();
             }
+            catch (NoSuchElementException)
+            {
+
+            }
+
         }
 
-        public void AutoLike(string targetUsername)
+        public bool AutoComment(string targetUsername, string comment)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-
-            driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
-
-            //Select each post
-            wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
-            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
-            ScrollDown(js);
-
-            var posts = driver.FindElements(By.CssSelector("div._aagw"));
-
-            foreach (var post in posts)
+            try
             {
-                wait.Until(ExpectedConditions.ElementToBeClickable(post));
-                js.ExecuteScript("arguments[0].click();", post);
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
-                //Check if the post already be liked
-                bool isnotLiked = driver.FindElements(By.CssSelector("span._aamw svg[aria-label='Like']")).Any();
+                driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
 
-                if (isnotLiked)
+                //Select each post
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                ScrollDown(js);
+
+                var posts = driver.FindElements(By.CssSelector("div._aagw"));
+
+                //Choose a random cmt
+                string[] lines = comment.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                Random random = new Random();
+
+
+                foreach (var post in posts)
                 {
-                    driver.FindElement(By.CssSelector("span._aamw svg[aria-label='Like']")).Click();
+                    wait.Until(ExpectedConditions.ElementToBeClickable(post));
+                    js.ExecuteScript("arguments[0].click();", post);
 
-                    // Wait for the like action to complete
+                    try
+                    {
+                        IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
+                        commentButton.Click();
+                    }
+                    catch (NoSuchElementException)
+                    {
+                        continue;
+                    }
+
+                    //Random comment
+                    int randomIndex = random.Next(0, lines.Length);
+                    string randomcmt = lines[randomIndex];
+                    IWebElement cmtInput = driver.FindElement(By.CssSelector("textarea[aria-label='Add a comment…']"));
+                    cmtInput.SendKeys(randomcmt);
+
+                    IWebElement postButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div._am-5 div.x1i10hfl[role='button']")));
+                    postButton.Click();
+
+                    // Wait for the action to complete
                     Task.Delay(1000).Wait();
+
+                    //Click on the close button
+                    IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
+
+                    js.ExecuteScript("arguments[0].click();", closeButton);
+
+                    // Wait for the next post to be visible
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
                 }
-
-                //Click on the close button
-                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
-
-                js.ExecuteScript("arguments[0].click();", closeButton);
-
-                // Wait for the next post to be visible
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
-
+                return true;
             }
+            catch (WebDriverTimeoutException)
+            {
+                MessageBox.Show("User có thể bị xóa ,không đăng ảnh hoặc không public ảnh");
+                return false;
+            }
+        }
+
+        public bool AutoLike(string targetUsername)
+        {
+            try {
+
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+
+                driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
+
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+                IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                ScrollDown(js);
+
+                var posts = driver.FindElements(By.CssSelector("div._aagw"));
+
+                foreach (var post in posts)
+                {
+                    wait.Until(ExpectedConditions.ElementToBeClickable(post));
+                    js.ExecuteScript("arguments[0].click();", post);
+
+                    //Check if the post already be liked
+                    bool isnotLiked = driver.FindElements(By.CssSelector("span._aamw svg[aria-label='Like']")).Any();
+
+                    if (isnotLiked)
+                    {
+                        IWebElement likeButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("span._aamw svg[aria-label='Like']")));
+                        likeButton.Click();
+                        // Wait for the like action to complete
+                        Task.Delay(1000).Wait();
+                    }
+
+                    //Click on the close button
+                    IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
+
+                    js.ExecuteScript("arguments[0].click();", closeButton);
+
+                    // Wait for the next post to be visible
+                    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+                }
+                return true;
+            }
+            catch (WebDriverTimeoutException)
+            {
+                MessageBox.Show("User có thể bị xóa ,không đăng ảnh hoặc không public ảnh");
+                return false;
+            }
+            
         }
 
         public void AutoFollow(string listUser)

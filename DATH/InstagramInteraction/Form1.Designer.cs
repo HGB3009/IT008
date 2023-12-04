@@ -44,7 +44,7 @@
             textBox1 = new TextBox();
             heartRainButton = new Button();
             numericUpDown1 = new NumericUpDown();
-            richTextBox1 = new RichTextBox();
+            accountListInput = new RichTextBox();
             groupBox6 = new GroupBox();
             cmtInput = new RichTextBox();
             autoCmtButton = new Button();
@@ -147,7 +147,7 @@
             groupBox7.Controls.Add(textBox1);
             groupBox7.Controls.Add(heartRainButton);
             groupBox7.Controls.Add(numericUpDown1);
-            groupBox7.Controls.Add(richTextBox1);
+            groupBox7.Controls.Add(accountListInput);
             groupBox7.Dock = DockStyle.Bottom;
             groupBox7.Location = new Point(3, 91);
             groupBox7.Name = "groupBox7";
@@ -215,14 +215,14 @@
             numericUpDown1.Size = new Size(150, 30);
             numericUpDown1.TabIndex = 1;
             // 
-            // richTextBox1
+            // accountListInput
             // 
-            richTextBox1.Dock = DockStyle.Left;
-            richTextBox1.Location = new Point(3, 26);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(474, 217);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            accountListInput.Dock = DockStyle.Left;
+            accountListInput.Location = new Point(3, 26);
+            accountListInput.Name = "accountListInput";
+            accountListInput.Size = new Size(474, 217);
+            accountListInput.TabIndex = 0;
+            accountListInput.Text = "";
             // 
             // groupBox6
             // 
@@ -358,5 +358,7 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private RichTextBox userList;
+        private RichTextBox accountListInput;
     }
 }

@@ -16,17 +16,16 @@ namespace InstagramInteraction
             InitializeComponent();
             itgbot = new instagramBot();
         }
-        private void autoLogin()
+        private void autoLogin(string username, string password)
         {
             try
             {
-                if (usernameLoginInput.Text != "" && passwordLoginInput.Text != "")
+                if (!alreadyLogin)
                 {
-                    if (!alreadyLogin)
+                    if (username != "" && password != "")
                     {
-
-                        loginUsernameNow = usernameLoginInput.Text;
-                        loginPasswordNow = passwordLoginInput.Text;
+                        loginUsernameNow = username;
+                        loginPasswordNow = password;
                         if (!itgbot.Login(loginUsernameNow, loginPasswordNow))
                         {
                             alreadyLogin = false;
@@ -37,105 +36,111 @@ namespace InstagramInteraction
                     }
                     else
                     {
-                        if (usernameLoginInput.Text != loginUsernameNow)
-                        {
-                            itgbot.Logout();
-                            loginUsernameNow = usernameLoginInput.Text;
-                            loginPasswordNow = passwordLoginInput.Text;
-                            if (!itgbot.Login(loginUsernameNow, loginPasswordNow))
-                            {
-                                alreadyLogin = false;
-                                MessageBox.Show("Thông tin về username và password của account dùng để thực hiện chức năng không đúng!");
-                            }
-                            else
-                                alreadyLogin = true;
-                        }
+                        alreadyLogin = false;
+                        MessageBox.Show("Vui lòng nhập thông tin về username và password của account dùng để thực hiện chức năng!");
                     }
                 }
-                else
+                else if (username != loginUsernameNow)
                 {
-                    alreadyLogin = false;
-                    MessageBox.Show("Vui lòng nhập thông tin về username và password của account dùng để thực hiện chức năng!");
+                    if (username != "" && password != "")
+                    {
+                        itgbot.Logout();
+                        loginUsernameNow = username;
+                        loginPasswordNow = password;
+                        if (!itgbot.Login(loginUsernameNow, loginPasswordNow))
+                        {
+                            alreadyLogin = false;
+                            MessageBox.Show("Thông tin về username và password của account dùng để thực hiện chức năng không đúng!");
+                        }
+                        else
+                            alreadyLogin = true;
+                    }
+                    else
+                    {
+                        alreadyLogin = false;
+                        MessageBox.Show("Vui lòng nhập thông tin về username và password của account dùng để thực hiện chức năng!");
+                    }
                 }
             }
             catch (WebDriverTimeoutException)
             {
-                MessageBox.Show("Thông tin về username và password của account dùng để thực hiện chức năng không đúng!");
                 alreadyLogin = false;
+                MessageBox.Show("Thông tin về username và password của account dùng để thực hiện chức năng không đúng!");
             }
             catch (ElementClickInterceptedException)
             {
-                MessageBox.Show("Vui lòng nhập password từ 6 ký tự trở lên!");
                 alreadyLogin = false;
+                MessageBox.Show("Vui lòng nhập password từ 6 ký tự trở lên!");
             }
-            
         }
         private void autoLikeButton_Click(object sender, EventArgs e)
         {
-            autoLogin();
-            if (alreadyLogin)
+            if (usernameInteractedInput.Text != "")
             {
-                if (usernameInteractedInput.Text != "")
+                autoLogin(usernameLoginInput.Text, passwordLoginInput.Text);
+                if (alreadyLogin)
                 {
-                    itgbot.AutoLike(usernameInteractedInput.Text);
-                    MessageBox.Show("Đã like thành công!");
+                    if (itgbot.AutoLike(usernameInteractedInput.Text))
+                        MessageBox.Show("Đã like thành công!");
                 }
-                else
-                    MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
+                
             }
+            else
+                MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
         }
 
         private void autoCmtButton_Click(object sender, EventArgs e)
         {
-            autoLogin();
-            if (alreadyLogin)
+            if (usernameInteractedInput.Text != "")
             {
-                if (usernameInteractedInput.Text != "")
-                {
+                autoLogin(usernameLoginInput.Text, passwordLoginInput.Text);
+                if (alreadyLogin)
+                {                
                     if (cmtInput.Text != "")
                     {
-                        itgbot.AutoComment(usernameInteractedInput.Text, cmtInput.Text);
-                        MessageBox.Show("Đã comment thành công!");
+                        if (itgbot.AutoComment(usernameInteractedInput.Text, cmtInput.Text))
+                            MessageBox.Show("Đã comment thành công!");
                     }
                     else
                     {
                         MessageBox.Show("Vui lòng nhập nội dung bạn muốn bình luận!");
                     }
                 }
-                else
-                    MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
+                
             }
+            else
+                MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
         }
 
         private void autoFollowButton_Click(object sender, EventArgs e)
         {
-            autoLogin();
-            if (alreadyLogin)
+            if (usernameListInput.Text != "")
             {
-                if (usernameListInput.Text != "")
+                autoLogin(usernameLoginInput.Text, passwordLoginInput.Text);
+                if (alreadyLogin)
                 {
                     itgbot.AutoFollow(usernameListInput.Text);
                     MessageBox.Show("Đã follow thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng danh sách user bạn muốn follow!");
-                }
+                }       
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng danh sách user bạn muốn follow!");
             }
         }
         private void autoDown_Click(object sender, EventArgs e)
         {
-            autoLogin();
-            if (alreadyLogin)
+            if (usernameInteractedInput.Text != "")
             {
-                if (usernameInteractedInput.Text != "")
-                {
+                autoLogin(usernameLoginInput.Text, passwordLoginInput.Text);
+                if (alreadyLogin)
+                {                
                     string downloadFolder = GetDownloadFolder();
                     itgbot.AutoDownPicCmt(usernameInteractedInput.Text, downloadFolder);
                 }
-                else
-                    MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
             }
+            else
+                MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
         }
         private static string GetDownloadFolder()
         {
@@ -159,8 +164,32 @@ namespace InstagramInteraction
 
         private void heartRainButton_Click(object sender, EventArgs e)
         {
-            autoLogin();
-            itgbot.Logout();
+            if (accountListInput.Text != "")
+            {
+                if (usernameInteractedInput.Text != "")
+                {
+                    string[] lines = accountListInput.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                    foreach (var line in lines)
+                    {
+                        string[] parts = line.Split(',');
+                        string username = parts[0];
+                        string password = parts[1];
+                        autoLogin(username, password);
+                        if (alreadyLogin)
+                        {                        
+                            itgbot.AutoLike(usernameInteractedInput.Text);
+                        
+                        }
+                    }
+                    MessageBox.Show("Đã like thành công!");
+                }
+                else
+                    MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng danh sách account bạn dùng để bão tim!");
+            }
         }
     }
 
