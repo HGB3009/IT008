@@ -42,7 +42,7 @@
             label1 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            button1 = new Button();
+            heartRainButton = new Button();
             numericUpDown1 = new NumericUpDown();
             richTextBox1 = new RichTextBox();
             groupBox6 = new GroupBox();
@@ -145,7 +145,7 @@
             groupBox7.Controls.Add(label1);
             groupBox7.Controls.Add(textBox2);
             groupBox7.Controls.Add(textBox1);
-            groupBox7.Controls.Add(button1);
+            groupBox7.Controls.Add(heartRainButton);
             groupBox7.Controls.Add(numericUpDown1);
             groupBox7.Controls.Add(richTextBox1);
             groupBox7.Dock = DockStyle.Bottom;
@@ -197,15 +197,15 @@
             textBox1.Size = new Size(125, 30);
             textBox1.TabIndex = 19;
             // 
-            // button1
+            // heartRainButton
             // 
-            button1.Location = new Point(549, 171);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 55);
-            button1.TabIndex = 18;
-            button1.Text = "Bão tim";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            heartRainButton.Location = new Point(549, 171);
+            heartRainButton.Name = "heartRainButton";
+            heartRainButton.Size = new Size(153, 55);
+            heartRainButton.TabIndex = 18;
+            heartRainButton.Text = "Bão tim";
+            heartRainButton.UseVisualStyleBackColor = true;
+            heartRainButton.Click += heartRainButton_Click;
             // 
             // numericUpDown1
             // 
@@ -354,7 +354,7 @@
         private RichTextBox richTextBox1;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button button1;
+        private Button heartRainButton;
         private Label label3;
         private Label label2;
         private Label label1;

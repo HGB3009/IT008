@@ -60,6 +60,8 @@ namespace InstagramInteraction
 
             //Select each post
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            ScrollDown(js);
 
             var posts = driver.FindElements(By.CssSelector("div._aagw"));
 
@@ -70,7 +72,8 @@ namespace InstagramInteraction
 
             foreach (var post in posts)
             {
-                post.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(post));
+                js.ExecuteScript("arguments[0].click();", post);
 
                 IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
                 commentButton.Click();
@@ -104,12 +107,15 @@ namespace InstagramInteraction
 
             //Select each post
             wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            ScrollDown(js);
 
             var posts = driver.FindElements(By.CssSelector("div._aagw"));
 
             foreach (var post in posts)
             {
-                post.Click();
+                wait.Until(ExpectedConditions.ElementToBeClickable(post));
+                js.ExecuteScript("arguments[0].click();", post);
 
                 //Check if the post already be liked
                 bool isnotLiked = driver.FindElements(By.CssSelector("span._aamw svg[aria-label='Like']")).Any();
@@ -123,8 +129,10 @@ namespace InstagramInteraction
                 }
 
                 //Click on the close button
-                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.x6s0dn4.xjbqb8w.x1ejq31n.xd10rxx.x1sy0etr.x17r0tee.x1ypdohk.x78zum5.xl56j7k.x1y1aw1k.x1sxyh0.xwib8y2.xurb0ha.xcdnw81[role='button']"));
-                closeButton.Click();
+                //Click on the close button
+                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
+
+                js.ExecuteScript("arguments[0].click();", closeButton);
 
                 // Wait for the next post to be visible
                 wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
