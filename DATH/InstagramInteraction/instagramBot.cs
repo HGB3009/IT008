@@ -23,33 +23,45 @@ namespace InstagramInteraction
             driver = new ChromeDriver();
         }
 
-        public void Login(string username, string password)
+        public bool Login(string username, string password)
         {
-            driver.Navigate().GoToUrl("https://www.instagram.com/accounts/login/");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            try
+            {
+                driver.Navigate().GoToUrl("https://www.instagram.com/accounts/login/");
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
 
 
-            IWebElement usernameInput = wait.Until(ExpectedConditions.ElementIsVisible(By.Name("username")));
-            IWebElement passwordInput = driver.FindElement(By.Name("password"));
-            IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
+                IWebElement usernameInput = wait.Until(ExpectedConditions.ElementIsVisible(By.Name("username")));
+                IWebElement passwordInput = driver.FindElement(By.Name("password"));
+                IWebElement loginButton = driver.FindElement(By.CssSelector("button[type='submit']"));
 
-            usernameInput.SendKeys(username);
-            passwordInput.SendKeys(password);
-            loginButton.Click();
+                usernameInput.SendKeys(username);
+                passwordInput.SendKeys(password);
+                loginButton.Click();
+                if (driver.FindElement(By.ClassName("_ab2z")).Displayed)
+                    return false;
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+                IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
+                notNowButton1.Click();
 
-            wait.Until(driver => driver.Url.Contains("https://www.instagram.com/"));
-
-            IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
-            notNowButton1.Click();
-
-            IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
-            notNowButton2.Click();
+                IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
+                notNowButton2.Click();
+                return true;
+            }
         }
         public void Logout()
         {
-            IWebElement settingButton = driver.FindElement(By.CssSelector("div.x9f619.x6s0dn4 svg[aria-label='Settings']"));
-
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            IWebElement settingButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("div.x9f619.xxk0z11.xii2z7h.x11xpdln.x19c4wfv.xvy4d1p > svg[aria-label='Settings']")));
             settingButton.Click();
+
+            IWebElement LogoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[contains(@class, 'x9f619') and contains(@class, 'xjbqb8w') and contains(@class, 'x78zum5') and contains(@class, 'x168nmei') and contains(@class, 'x13lgxp2') and contains(@class, 'x5pf9jr') and contains(@class, 'xo71vjh') and contains(@class, 'x1uhb9sk') and contains(@class, 'x1plvlek') and contains(@class, 'xryxfnj') and contains(@class, 'x1iyjqo2') and contains(@class, 'x2lwn1j') and contains(@class, 'xeuugli') and contains(@class, 'xdt5ytf') and contains(@class, 'xqjyukv') and contains(@class, 'x1cy8zhl') and contains(@class, 'x1oa3qoh') and contains(@class, 'x1nhvcw1')]//span[text()='Log out']")));
+            LogoutButton.Click();
         }
 
         public void AutoComment(string targetUsername, string comment)
@@ -75,8 +87,15 @@ namespace InstagramInteraction
                 wait.Until(ExpectedConditions.ElementToBeClickable(post));
                 js.ExecuteScript("arguments[0].click();", post);
 
-                IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
-                commentButton.Click();
+                try
+                {
+                    IWebElement commentButton = driver.FindElement(By.CssSelector("span._aamx svg[aria-label='Comment']"));
+                    commentButton.Click();
+                }
+                catch (NoSuchElementException)
+                {
+                    continue;
+                }
 
                 //Random comment
                 int randomIndex = random.Next(0, lines.Length);
@@ -91,8 +110,9 @@ namespace InstagramInteraction
                 Task.Delay(1000).Wait();
 
                 //Click on the close button
-                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.xe8uvvx.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.x16tdsg8.x1hl2dhg.xggy1nq.x1a2a7pz.x6s0dn4.xjbqb8w.x1ejq31n.xd10rxx.x1sy0etr.x17r0tee.x1ypdohk.x78zum5.xl56j7k.x1y1aw1k.x1sxyh0.xwib8y2.xurb0ha.xcdnw81[role='button']"));
-                closeButton.Click();
+                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
+
+                js.ExecuteScript("arguments[0].click();", closeButton);
 
                 // Wait for the next post to be visible
                 wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
@@ -128,7 +148,6 @@ namespace InstagramInteraction
                     Task.Delay(1000).Wait();
                 }
 
-                //Click on the close button
                 //Click on the close button
                 IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
 
