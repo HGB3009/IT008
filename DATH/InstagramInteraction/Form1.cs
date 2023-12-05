@@ -45,6 +45,7 @@ namespace InstagramInteraction
                     if (username != "" && password != "")
                     {
                         itgbot.Logout();
+                        Thread.Sleep(3000);
                         loginUsernameNow = username;
                         loginPasswordNow = password;
                         if (!itgbot.Login(loginUsernameNow, loginPasswordNow))
@@ -176,9 +177,8 @@ namespace InstagramInteraction
                         string password = parts[1];
                         autoLogin(username, password);
                         if (alreadyLogin)
-                        {                        
+                        {
                             itgbot.AutoLike(usernameInteractedInput.Text);
-                        
                         }
                     }
                     MessageBox.Show("Đã like thành công!");

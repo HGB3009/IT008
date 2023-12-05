@@ -50,14 +50,20 @@ namespace InstagramInteraction
                 {
                     IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
                     notNowButton1.Click();
-
-                    IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
-                    notNowButton2.Click();
                 } 
                 
                 catch (NoSuchElementException)
                 {
                     
+                }
+                try
+                {
+                    IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
+                    notNowButton2.Click();
+                }
+                catch (NoSuchElementException)
+                {
+                    return true;
                 }
                 return true;
             }
@@ -74,10 +80,10 @@ namespace InstagramInteraction
                 IWebElement LogoutButton = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[contains(@class, 'x9f619') and contains(@class, 'xjbqb8w') and contains(@class, 'x78zum5') and contains(@class, 'x168nmei') and contains(@class, 'x13lgxp2') and contains(@class, 'x5pf9jr') and contains(@class, 'xo71vjh') and contains(@class, 'x1uhb9sk') and contains(@class, 'x1plvlek') and contains(@class, 'xryxfnj') and contains(@class, 'x1iyjqo2') and contains(@class, 'x2lwn1j') and contains(@class, 'xeuugli') and contains(@class, 'xdt5ytf') and contains(@class, 'xqjyukv') and contains(@class, 'x1cy8zhl') and contains(@class, 'x1oa3qoh') and contains(@class, 'x1nhvcw1')]//span[text()='Log out']")));
                 js.ExecuteScript("arguments[0].click();", LogoutButton);
 
-                IWebElement loginbutton = driver.FindElement(By.CssSelector("input[type=\"button\"][name=\"login\"][value=\"Log In\"]"));
+                IWebElement loginbutton = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("button._a9--._ap36._a9_1")));
                 loginbutton.Click();
             }
-            catch (NoSuchElementException)
+            catch (StaleElementReferenceException)
             {
 
             }
@@ -293,7 +299,7 @@ namespace InstagramInteraction
                 actions.SendKeys(OpenQA.Selenium.Keys.End).Perform();
 
                 // Wait for a short time to allow new content to load
-                Thread.Sleep(3000);
+                Thread.Sleep(2500);
 
                 // Check if the page has stopped scrolling (height is unchanged)
                 long newHeight = (long)js.ExecuteScript("return Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );");
