@@ -45,7 +45,7 @@ namespace InstagramInteraction
             }
             catch (NoSuchElementException)
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(8));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
                 try
                 {
                     IWebElement notNowButton1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[text()='Not now']")));
@@ -61,7 +61,7 @@ namespace InstagramInteraction
                     IWebElement notNowButton2 = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("button._a9--._ap36._a9_1")));
                     notNowButton2.Click();
                 }
-                catch (NoSuchElementException)
+                catch (WebDriverTimeoutException)
                 {
                     return true;
                 }

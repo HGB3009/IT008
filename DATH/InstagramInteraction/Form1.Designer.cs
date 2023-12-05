@@ -43,7 +43,7 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             heartRainButton = new Button();
-            numericUpDown1 = new NumericUpDown();
+            numberOfHeart = new NumericUpDown();
             accountListInput = new RichTextBox();
             groupBox6 = new GroupBox();
             cmtInput = new RichTextBox();
@@ -58,7 +58,7 @@
             groupBox4.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numberOfHeart).BeginInit();
             groupBox6.SuspendLayout();
             groupBox5.SuspendLayout();
             SuspendLayout();
@@ -146,7 +146,7 @@
             groupBox7.Controls.Add(textBox2);
             groupBox7.Controls.Add(textBox1);
             groupBox7.Controls.Add(heartRainButton);
-            groupBox7.Controls.Add(numericUpDown1);
+            groupBox7.Controls.Add(numberOfHeart);
             groupBox7.Controls.Add(accountListInput);
             groupBox7.Dock = DockStyle.Bottom;
             groupBox7.Location = new Point(3, 91);
@@ -207,13 +207,13 @@
             heartRainButton.UseVisualStyleBackColor = true;
             heartRainButton.Click += heartRainButton_Click;
             // 
-            // numericUpDown1
+            // numberOfHeart
             // 
-            numericUpDown1.Location = new Point(613, 52);
-            numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(150, 30);
-            numericUpDown1.TabIndex = 1;
+            numberOfHeart.Location = new Point(613, 52);
+            numberOfHeart.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            numberOfHeart.Name = "numberOfHeart";
+            numberOfHeart.Size = new Size(150, 30);
+            numberOfHeart.TabIndex = 1;
             // 
             // accountListInput
             // 
@@ -326,7 +326,7 @@
             groupBox2.ResumeLayout(false);
             groupBox7.ResumeLayout(false);
             groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numberOfHeart).EndInit();
             groupBox6.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             ResumeLayout(false);
@@ -350,7 +350,7 @@
         private RichTextBox cmtInput;
         private RichTextBox usernameListInput;
         private GroupBox groupBox7;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown numberOfHeart;
         private RichTextBox richTextBox1;
         private TextBox textBox2;
         private TextBox textBox1;
