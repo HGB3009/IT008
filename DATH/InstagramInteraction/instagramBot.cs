@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -227,7 +228,7 @@ namespace InstagramInteraction
 
         public void AutoDownPicCmt(string targetUsername, string downloadFolder)
         {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             driver.Navigate().GoToUrl($"https://www.instagram.com/{targetUsername}/");
 
             string imagesFolder = Path.Combine(downloadFolder, "ImagesFrom" + targetUsername);
@@ -246,14 +247,32 @@ namespace InstagramInteraction
                 wait.Until(ExpectedConditions.ElementToBeClickable(post));
                 js.ExecuteScript("arguments[0].click();", post);
 
-                // Lấy danh sách các phần tử ảnh trong container
-                IList<IWebElement> imageElements = driver.FindElements(By.CssSelector("div._aagv img"));
+                IList<IWebElement> imageElements = driver.FindElements(By.XPath("//div[@class='_aagv']//img\r\n"));
                 foreach (IWebElement imageElement in imageElements)
                 {
-                    // Lấy đường link của ảnh từ thuộc tính "src"
                     string imageUrl = imageElement.GetAttribute("src");
                     DownloadImage(imageUrl, imagesFolder);
                 }
+
+                // Wait for comments to load
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade")));
+
+                // Scroll down to load more comments
+                CmtScrollDown(js);
+
+                // Get the comments
+                IList<IWebElement> commentElements = driver.FindElements(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade"));
+                List<string> comments = new List<string>();
+
+                foreach (var commentElement in commentElements)
+                {
+                    // Extract the text of each comment
+                    string commentText = commentElement.Text;
+                    comments.Add(commentText);
+                }
+
+                // Save or process the comments as needed
+                SaveCommentToFile(comments, commentsFilePath);
 
                 //Click on the close button
                 IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
@@ -264,7 +283,7 @@ namespace InstagramInteraction
                 wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
                 //}
             }
-                MessageBox.Show("Downloading Complete");
+                MessageBox.Show("Đã tải ảnh thành công");
         }
         private void DownloadImage(string imageUrl, string folderPath)
         {
@@ -279,10 +298,10 @@ namespace InstagramInteraction
             }
         }
 
-        private void SaveCommentToFile(string commentText, string filePath)
+        private void SaveCommentToFile(List<string> comments, string filePath)
         {
             // Save the comment to the specified file
-            File.AppendAllText(filePath, commentText + Environment.NewLine);
+            File.AppendAllText(filePath, comments + Environment.NewLine);
         }
 
         private void ScrollDown(IJavaScriptExecutor js)
@@ -308,10 +327,50 @@ namespace InstagramInteraction
                     break; // Exit the loop if the page has stopped scrolling
                 }
             }
+                // Wait until the last image is visible
+                By lastImageLocator = By.CssSelector("div._aagw:last-child");
+                wait.Until(ExpectedConditions.ElementIsVisible(lastImageLocator));
+        }
+        private void CmtScrollDown(IJavaScriptExecutor js)
+        {
+            try
+            {
+                Actions actions = new Actions(driver);
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                //Scroll to make all the post visible
+                while (true)
+                {
+                   
 
-            // Wait until the last image is visible
-            By lastImageLocator = By.CssSelector("div._aagw:last-child");
-            wait.Until(ExpectedConditions.ElementIsVisible(lastImageLocator));
+                    Thread.Sleep(1000);
+                    // Perform scroll down
+                    actions.SendKeys(OpenQA.Selenium.Keys.End).Perform();
+
+                    // Wait for a short time to allow new content to load
+                    Thread.Sleep(2500);
+
+                    IWebElement loadButton = wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("svg[aria-label='Load more comments']")));
+                    loadButton.Click();
+
+                }
+            }
+            catch (WebDriverTimeoutException)
+            {
+                long currentHeight = (long)js.ExecuteScript("return Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );");
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                // Check if the page has stopped scrolling (height is unchanged)
+                long newHeight = (long)js.ExecuteScript("return Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );");
+
+                if (newHeight == currentHeight)
+                {
+                    return;
+                }
+
+                // Wait until the last image is visible
+                By lastImageLocator = By.CssSelector("div._aagw:last-child");
+                wait.Until(ExpectedConditions.ElementIsVisible(lastImageLocator));
+            }
+            
         }
         public bool IsElementPresent(By by)
         {
