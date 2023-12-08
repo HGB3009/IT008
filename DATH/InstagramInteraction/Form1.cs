@@ -11,6 +11,7 @@ namespace InstagramInteraction
         bool alreadyLogin = false;
         string loginUsernameNow;
         string loginPasswordNow;
+        private string currentFilePath = string.Empty;
         public Form1()
         {
             InitializeComponent();
@@ -214,6 +215,42 @@ namespace InstagramInteraction
             else
             {
                 MessageBox.Show("Vui lòng danh sách account bạn dùng để bão tim!");
+            }
+        }
+
+        private void userLiketxtButton_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                currentFilePath = openFileDialog.FileName;
+                accountListInput.Text = File.ReadAllText(currentFilePath);
+            }
+        }
+
+        private void cmttxtButton_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                currentFilePath = openFileDialog.FileName;
+                cmtInput.Text = File.ReadAllText(currentFilePath);
+            }
+        }
+
+        private void followtxtButton_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                currentFilePath = openFileDialog.FileName;
+                usernameListInput.Text = File.ReadAllText(currentFilePath);
             }
         }
     }

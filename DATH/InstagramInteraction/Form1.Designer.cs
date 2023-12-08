@@ -37,18 +37,21 @@
             usernameInteractedInput = new TextBox();
             groupBox2 = new GroupBox();
             groupBox7 = new GroupBox();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
             label3 = new Label();
+            userLiketxtButton = new Button();
             label2 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
             heartRainButton = new Button();
             numberOfHeart = new NumericUpDown();
             accountListInput = new RichTextBox();
             groupBox6 = new GroupBox();
+            cmttxtButton = new Button();
             cmtInput = new RichTextBox();
             autoCmtButton = new Button();
             groupBox5 = new GroupBox();
+            followtxtButton = new Button();
             usernameListInput = new RichTextBox();
             autoFollowButton = new Button();
             autoLikeButton = new Button();
@@ -77,9 +80,9 @@
             // 
             // groupBox3
             // 
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox3.Controls.Add(usernameLoginInput);
             groupBox3.Controls.Add(passwordLoginInput);
-            groupBox3.Dock = DockStyle.Left;
             groupBox3.Location = new Point(3, 26);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(406, 168);
@@ -89,6 +92,7 @@
             // 
             // usernameLoginInput
             // 
+            usernameLoginInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             usernameLoginInput.Location = new Point(39, 57);
             usernameLoginInput.Name = "usernameLoginInput";
             usernameLoginInput.PlaceholderText = "Phone number, username or email";
@@ -97,6 +101,7 @@
             // 
             // passwordLoginInput
             // 
+            passwordLoginInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             passwordLoginInput.Location = new Point(39, 109);
             passwordLoginInput.Name = "passwordLoginInput";
             passwordLoginInput.PasswordChar = '*';
@@ -106,8 +111,8 @@
             // 
             // groupBox4
             // 
+            groupBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox4.Controls.Add(usernameInteractedInput);
-            groupBox4.Dock = DockStyle.Right;
             groupBox4.Location = new Point(415, 26);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(364, 168);
@@ -117,6 +122,7 @@
             // 
             // usernameInteractedInput
             // 
+            usernameInteractedInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             usernameInteractedInput.Location = new Point(33, 76);
             usernameInteractedInput.Name = "usernameInteractedInput";
             usernameInteractedInput.PlaceholderText = "Username";
@@ -140,11 +146,12 @@
             // 
             // groupBox7
             // 
+            groupBox7.Controls.Add(dateTimePicker2);
+            groupBox7.Controls.Add(dateTimePicker1);
             groupBox7.Controls.Add(label3);
+            groupBox7.Controls.Add(userLiketxtButton);
             groupBox7.Controls.Add(label2);
             groupBox7.Controls.Add(label1);
-            groupBox7.Controls.Add(textBox2);
-            groupBox7.Controls.Add(textBox1);
             groupBox7.Controls.Add(heartRainButton);
             groupBox7.Controls.Add(numberOfHeart);
             groupBox7.Controls.Add(accountListInput);
@@ -156,19 +163,46 @@
             groupBox7.TabStop = false;
             groupBox7.Text = "Bão tim";
             // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Location = new Point(632, 101);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(141, 30);
+            dateTimePicker2.TabIndex = 25;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(632, 66);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(141, 30);
+            dateTimePicker1.TabIndex = 24;
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(483, 138);
+            label3.Location = new Point(479, 107);
             label3.Name = "label3";
             label3.Size = new Size(153, 23);
             label3.TabIndex = 23;
             label3.Text = "Thời gian kết thúc:";
             // 
+            // userLiketxtButton
+            // 
+            userLiketxtButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            userLiketxtButton.Location = new Point(483, 171);
+            userLiketxtButton.Name = "userLiketxtButton";
+            userLiketxtButton.Size = new Size(153, 55);
+            userLiketxtButton.TabIndex = 16;
+            userLiketxtButton.Text = "Connect txt";
+            userLiketxtButton.UseVisualStyleBackColor = true;
+            userLiketxtButton.Click += userLiketxtButton_Click;
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(483, 96);
+            label2.Location = new Point(483, 72);
             label2.Name = "label2";
             label2.Size = new Size(149, 23);
             label2.TabIndex = 22;
@@ -177,31 +211,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(483, 54);
+            label1.Location = new Point(483, 31);
             label1.Name = "label1";
             label1.Size = new Size(108, 23);
             label1.TabIndex = 21;
             label1.Text = "Nhập số tim:";
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(638, 135);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 30);
-            textBox2.TabIndex = 20;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(638, 93);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 30);
-            textBox1.TabIndex = 19;
-            // 
             // heartRainButton
             // 
-            heartRainButton.Location = new Point(549, 171);
+            heartRainButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            heartRainButton.Location = new Point(638, 171);
             heartRainButton.Name = "heartRainButton";
-            heartRainButton.Size = new Size(153, 55);
+            heartRainButton.Size = new Size(125, 55);
             heartRainButton.TabIndex = 18;
             heartRainButton.Text = "Bão tim";
             heartRainButton.UseVisualStyleBackColor = true;
@@ -209,7 +230,7 @@
             // 
             // numberOfHeart
             // 
-            numberOfHeart.Location = new Point(613, 52);
+            numberOfHeart.Location = new Point(597, 29);
             numberOfHeart.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numberOfHeart.Name = "numberOfHeart";
             numberOfHeart.Size = new Size(150, 30);
@@ -226,6 +247,7 @@
             // 
             // groupBox6
             // 
+            groupBox6.Controls.Add(cmttxtButton);
             groupBox6.Controls.Add(cmtInput);
             groupBox6.Controls.Add(autoCmtButton);
             groupBox6.Dock = DockStyle.Bottom;
@@ -235,6 +257,16 @@
             groupBox6.TabIndex = 16;
             groupBox6.TabStop = false;
             groupBox6.Text = "Nhập các câu bình luận:";
+            // 
+            // cmttxtButton
+            // 
+            cmttxtButton.Location = new Point(549, 127);
+            cmttxtButton.Name = "cmttxtButton";
+            cmttxtButton.Size = new Size(153, 55);
+            cmttxtButton.TabIndex = 17;
+            cmttxtButton.Text = "Connect txt";
+            cmttxtButton.UseVisualStyleBackColor = true;
+            cmttxtButton.Click += cmttxtButton_Click;
             // 
             // cmtInput
             // 
@@ -247,7 +279,7 @@
             // 
             // autoCmtButton
             // 
-            autoCmtButton.Location = new Point(558, 85);
+            autoCmtButton.Location = new Point(549, 54);
             autoCmtButton.Name = "autoCmtButton";
             autoCmtButton.Size = new Size(153, 55);
             autoCmtButton.TabIndex = 14;
@@ -257,6 +289,7 @@
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(followtxtButton);
             groupBox5.Controls.Add(usernameListInput);
             groupBox5.Controls.Add(autoFollowButton);
             groupBox5.Dock = DockStyle.Bottom;
@@ -266,6 +299,16 @@
             groupBox5.TabIndex = 15;
             groupBox5.TabStop = false;
             groupBox5.Text = "Nhập danh sách các user cần follow:";
+            // 
+            // followtxtButton
+            // 
+            followtxtButton.Location = new Point(549, 131);
+            followtxtButton.Name = "followtxtButton";
+            followtxtButton.Size = new Size(153, 55);
+            followtxtButton.TabIndex = 18;
+            followtxtButton.Text = "Connect txt";
+            followtxtButton.UseVisualStyleBackColor = true;
+            followtxtButton.Click += followtxtButton_Click;
             // 
             // usernameListInput
             // 
@@ -278,7 +321,7 @@
             // 
             // autoFollowButton
             // 
-            autoFollowButton.Location = new Point(558, 91);
+            autoFollowButton.Location = new Point(549, 52);
             autoFollowButton.Name = "autoFollowButton";
             autoFollowButton.Size = new Size(153, 55);
             autoFollowButton.TabIndex = 15;
@@ -352,13 +395,16 @@
         private GroupBox groupBox7;
         private NumericUpDown numberOfHeart;
         private RichTextBox richTextBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
         private Button heartRainButton;
         private Label label3;
         private Label label2;
         private Label label1;
         private RichTextBox userList;
         private RichTextBox accountListInput;
+        private Button cmttxtButton;
+        private Button userLiketxtButton;
+        private Button followtxtButton;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
     }
 }
