@@ -170,48 +170,77 @@ namespace InstagramInteraction
             {
                 if (usernameInteractedInput.Text != "")
                 {
-                    string[] lines = accountListInput.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                    List<string> accountList = new List<string>(lines);
-
-                    int numberOfAccountsToUse = Convert.ToInt32(numberOfHeart.Value);
-                    if (numberOfAccountsToUse > 0)
+                    DateTime startTime = startTimePicker.Value;
+                    DateTime endTime = endTimePicker.Value;
+                    if (startTime < endTime)
                     {
-                        List<string> selectedAccounts = new List<string>();
-                        Random random = new Random();
+                        string[] lines = accountListInput.Text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                        List<string> accountList = new List<string>(lines);
 
-                        for (int i = 0; i < numberOfAccountsToUse && i < accountList.Count; i++)
+                        int numberOfAccountsToUse = Convert.ToInt32(numberOfHeart.Value);
+                        if (numberOfAccountsToUse > 0)
                         {
-                            int randomIndex = random.Next(accountList.Count);
-                            selectedAccounts.Add(accountList[randomIndex]);
-                            accountList.RemoveAt(randomIndex);
-                        }
+                            List<string> selectedAccounts = new List<string>();
+                            Random random = new Random();
+                            int likesCount = 0;
 
-                        foreach (var selectedAccount in selectedAccounts)
-                        {
-                            string[] parts = selectedAccount.Split(',');
-                            string username = parts[0];
-                            string password = parts[1];
-
-                            autoLogin(username, password);
-
-                            if (alreadyLogin)
+                            while (DateTime.Now < startTime)
                             {
-                                itgbot.AutoLike(usernameInteractedInput.Text);
+                                Thread.Sleep(1000);
                             }
+
+                            while (likesCount < numberOfAccountsToUse && accountList.Count > 0 && DateTime.Now < endTime)
+                            {
+                                int randomIndex = random.Next(accountList.Count);
+                                string selectedAccount = accountList[randomIndex];
+                                accountList.RemoveAt(randomIndex);
+
+                                TimeSpan timeDifference = endTime - startTime;
+                                int randomSeconds = random.Next((int)timeDifference.TotalSeconds / 10);
+                                TimeSpan randomDelay = TimeSpan.FromSeconds(randomSeconds);
+
+
+
+                                string[] parts = selectedAccount.Split(',');
+                                string username = parts[0];
+                                string password = parts[1];
+
+                                autoLogin(username, password);
+
+                                if (alreadyLogin)
+                                {
+                                    if (!itgbot.AutoLike(usernameInteractedInput.Text))
+                                        break;
+                                    else
+                                        likesCount++;
+                                }
+                                if (DateTime.Now > endTime)
+                                    break;
+                                else
+                                    Thread.Sleep(randomDelay);
+                            }
+
+                            MessageBox.Show($"Đã thực hiện chức năng thành công với {likesCount} tài khoản ngẫu nhiên!");
                         }
 
-                        MessageBox.Show($"Đã thực hiện chức năng thành công với {numberOfAccountsToUse} tài khoản ngẫu nhiên!");
+                        else
+                        {
+                            MessageBox.Show("Vui lòng nhập số lượng tài khoản muốn sử dụng và đảm bảo nó là một số dương!");
+                        }
                     }
+
                     else
                     {
-                        MessageBox.Show("Vui lòng nhập số lượng tài khoản muốn sử dụng và đảm bảo nó là một số dương!");
+                        MessageBox.Show("Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc!");
                     }
                 }
+
                 else
                 {
                     MessageBox.Show("Vui lòng nhập thông tin về username cần tương tác!");
                 }
             }
+
             else
             {
                 MessageBox.Show("Vui lòng danh sách account bạn dùng để bão tim!");

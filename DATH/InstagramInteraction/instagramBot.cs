@@ -239,50 +239,57 @@ namespace InstagramInteraction
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             ScrollDown(js);
 
-            var posts = driver.FindElements(By.CssSelector("div._aagw"));
-
-            //Select each post
-            foreach (var post in posts)
+            IList<IWebElement> imageElements = driver.FindElements(By.XPath("//div[@class='_aagv']//img\r\n"));
+            foreach (IWebElement imageElement in imageElements)
             {
-                wait.Until(ExpectedConditions.ElementToBeClickable(post));
-                js.ExecuteScript("arguments[0].click();", post);
-
-                IList<IWebElement> imageElements = driver.FindElements(By.XPath("//div[@class='_aagv']//img\r\n"));
-                foreach (IWebElement imageElement in imageElements)
-                {
-                    string imageUrl = imageElement.GetAttribute("src");
-                    DownloadImage(imageUrl, imagesFolder);
-                }
-
-                // Wait for comments to load
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade")));
-
-                // Scroll down to load more comments
-                CmtScrollDown(js);
-
-                // Get the comments
-                IList<IWebElement> commentElements = driver.FindElements(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade"));
-                List<string> comments = new List<string>();
-
-                foreach (var commentElement in commentElements)
-                {
-                    // Extract the text of each comment
-                    string commentText = commentElement.Text;
-                    comments.Add(commentText);
-                }
-
-                // Save or process the comments as needed
-                SaveCommentToFile(comments, commentsFilePath);
-
-                //Click on the close button
-                IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
-
-                js.ExecuteScript("arguments[0].click();", closeButton);
-
-                // Wait for the next post to be visible
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
-                //}
+                string imageUrl = imageElement.GetAttribute("src");
+                DownloadImage(imageUrl, imagesFolder);
             }
+
+            //var posts = driver.FindElements(By.CssSelector("div._aagw"));
+
+            ////Select each post
+            //foreach (var post in posts)
+            //{
+            //    wait.Until(ExpectedConditions.ElementToBeClickable(post));
+            //    js.ExecuteScript("arguments[0].click();", post);
+
+            //    IList<IWebElement> imageElements = driver.FindElements(By.XPath("//div[@class='_aagv']//img\r\n"));
+            //    foreach (IWebElement imageElement in imageElements)
+            //    {
+            //        string imageUrl = imageElement.GetAttribute("src");
+            //        DownloadImage(imageUrl, imagesFolder);
+            //    }
+
+            //    // Wait for comments to load
+            //    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade")));
+
+            //    // Scroll down to load more comments
+            //    CmtScrollDown(js);
+
+            //    // Get the comments
+            //    IList<IWebElement> commentElements = driver.FindElements(By.CssSelector("span._ap3a._aaco._aacu._aacx._aad7._aade"));
+            //    List<string> comments = new List<string>();
+
+            //    foreach (var commentElement in commentElements)
+            //    {
+            //        // Extract the text of each comment
+            //        string commentText = commentElement.Text;
+            //        comments.Add(commentText);
+            //    }
+
+            //    // Save or process the comments as needed
+            //    SaveCommentToFile(comments, commentsFilePath);
+
+            //    //Click on the close button
+            //    IWebElement closeButton = driver.FindElement(By.CssSelector("div.x160vmok.x10l6tqk.x1eu8d0j.x1vjfegm div.x1i10hfl[role='button']"));
+
+            //    js.ExecuteScript("arguments[0].click();", closeButton);
+
+            //    // Wait for the next post to be visible
+            //    wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("div._aagw")));
+            //    //}
+            //}
                 MessageBox.Show("Đã tải ảnh thành công");
         }
         private void DownloadImage(string imageUrl, string folderPath)

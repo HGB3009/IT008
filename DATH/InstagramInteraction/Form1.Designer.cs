@@ -37,8 +37,8 @@
             usernameInteractedInput = new TextBox();
             groupBox2 = new GroupBox();
             groupBox7 = new GroupBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            endTimePicker = new DateTimePicker();
+            startTimePicker = new DateTimePicker();
             label3 = new Label();
             userLiketxtButton = new Button();
             label2 = new Label();
@@ -146,8 +146,8 @@
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(dateTimePicker2);
-            groupBox7.Controls.Add(dateTimePicker1);
+            groupBox7.Controls.Add(endTimePicker);
+            groupBox7.Controls.Add(startTimePicker);
             groupBox7.Controls.Add(label3);
             groupBox7.Controls.Add(userLiketxtButton);
             groupBox7.Controls.Add(label2);
@@ -163,26 +163,26 @@
             groupBox7.TabStop = false;
             groupBox7.Text = "Bão tim";
             // 
-            // dateTimePicker2
+            // endTimePicker
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Time;
-            dateTimePicker2.Location = new Point(632, 101);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(141, 30);
-            dateTimePicker2.TabIndex = 25;
+            endTimePicker.Format = DateTimePickerFormat.Time;
+            endTimePicker.Location = new Point(632, 127);
+            endTimePicker.Name = "endTimePicker";
+            endTimePicker.Size = new Size(141, 30);
+            endTimePicker.TabIndex = 25;
             // 
-            // dateTimePicker1
+            // startTimePicker
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Time;
-            dateTimePicker1.Location = new Point(632, 66);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(141, 30);
-            dateTimePicker1.TabIndex = 24;
+            startTimePicker.Format = DateTimePickerFormat.Time;
+            startTimePicker.Location = new Point(632, 91);
+            startTimePicker.Name = "startTimePicker";
+            startTimePicker.Size = new Size(141, 30);
+            startTimePicker.TabIndex = 24;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(479, 107);
+            label3.Location = new Point(479, 127);
             label3.Name = "label3";
             label3.Size = new Size(153, 23);
             label3.TabIndex = 23;
@@ -202,7 +202,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(483, 72);
+            label2.Location = new Point(483, 97);
             label2.Name = "label2";
             label2.Size = new Size(149, 23);
             label2.TabIndex = 22;
@@ -211,7 +211,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(483, 31);
+            label1.Location = new Point(490, 47);
             label1.Name = "label1";
             label1.Size = new Size(108, 23);
             label1.TabIndex = 21;
@@ -230,7 +230,7 @@
             // 
             // numberOfHeart
             // 
-            numberOfHeart.Location = new Point(597, 29);
+            numberOfHeart.Location = new Point(623, 45);
             numberOfHeart.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numberOfHeart.Name = "numberOfHeart";
             numberOfHeart.Size = new Size(150, 30);
@@ -404,7 +404,7 @@
         private Button cmttxtButton;
         private Button userLiketxtButton;
         private Button followtxtButton;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker endTimePicker;
+        private DateTimePicker startTimePicker;
     }
 }
