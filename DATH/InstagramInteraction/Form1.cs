@@ -178,11 +178,12 @@ namespace InstagramInteraction
                         List<string> accountList = new List<string>(lines);
 
                         int numberOfAccountsToUse = Convert.ToInt32(numberOfHeart.Value);
+                        int likesCount = 0;
                         if (numberOfAccountsToUse > 0)
                         {
                             List<string> selectedAccounts = new List<string>();
                             Random random = new Random();
-                            int likesCount = 0;
+                            
 
                             while (DateTime.Now < startTime)
                             {
@@ -195,15 +196,14 @@ namespace InstagramInteraction
                                 string selectedAccount = accountList[randomIndex];
                                 accountList.RemoveAt(randomIndex);
 
-                                TimeSpan timeDifference = endTime - startTime;
-                                int randomSeconds = random.Next((int)timeDifference.TotalSeconds / 10);
-                                TimeSpan randomDelay = TimeSpan.FromSeconds(randomSeconds);
-
-
-
                                 string[] parts = selectedAccount.Split(',');
                                 string username = parts[0];
                                 string password = parts[1];
+
+                                TimeSpan timeDifference = endTime - startTime;
+                                int totalSeconds = (int)timeDifference.TotalSeconds;
+                                int randomSeconds = random.Next(totalSeconds / 10);
+                                TimeSpan randomDelay = TimeSpan.FromSeconds(randomSeconds);
 
                                 autoLogin(username, password);
 
@@ -215,6 +215,8 @@ namespace InstagramInteraction
                                         likesCount++;
                                 }
                                 if (DateTime.Now > endTime)
+                                    break;
+                                else if (likesCount == numberOfAccountsToUse)
                                     break;
                                 else
                                     Thread.Sleep(randomDelay);
@@ -249,6 +251,7 @@ namespace InstagramInteraction
 
         private void userLiketxtButton_Click(object sender, EventArgs e)
         {
+            accountListInput.Clear();
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
@@ -261,6 +264,7 @@ namespace InstagramInteraction
 
         private void cmttxtButton_Click(object sender, EventArgs e)
         {
+            cmtInput.Clear();
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
@@ -273,6 +277,7 @@ namespace InstagramInteraction
 
         private void followtxtButton_Click(object sender, EventArgs e)
         {
+            usernameListInput.Clear();
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 

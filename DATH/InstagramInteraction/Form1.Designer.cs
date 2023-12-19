@@ -359,7 +359,9 @@
             Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Instagram Interaction Tool";
             groupBox1.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
