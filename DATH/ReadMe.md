@@ -5,9 +5,9 @@
 
 
 ## **Contributors**:
-- Leader: Huỳnh Gia Bảo - 22520103 - [Github](https://github.com/HGB3009/IT008/tree/main/DATH)
-- Member: Phan Văn Đại- 22520182
-- Member: Tô Vĩnh Tiến - 22521474
+- Leader: Huỳnh Gia Bảo - 22520103 - [Github](https://github.com/HGB3009)
+- Member: Phan Văn Đại- 22520182 - [Github](https://github.com/PhanVanDiej)
+- Member: Tô Vĩnh Tiến - 22521474 - [Github](https://github.com/Terry).
 
 ## **Supervisors**:
 
@@ -24,7 +24,7 @@
   
 ## **How to use**: Provide a way to install or clone/use.
 
-## **Additional information**: - 
+## **Additional information**: 
 Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome.
 #### Lưu ý sử dụng lúc thiết bị có kết nối internet.
 
