@@ -16,6 +16,7 @@ namespace InstagramInteraction
         {
             InitializeComponent();
             itgbot = new instagramBot();
+            this.FormClosing += MainForm_FormClosing;
         }
         private void autoLogin(string username, string password)
         {
@@ -286,6 +287,19 @@ namespace InstagramInteraction
                 currentFilePath = openFileDialog.FileName;
                 usernameListInput.Text = File.ReadAllText(currentFilePath);
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn đóng ứng dụng?", "Xác nhận đóng", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            { itgbot.Quit(); };
         }
     }
 }

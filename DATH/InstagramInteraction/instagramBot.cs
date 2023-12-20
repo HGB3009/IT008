@@ -284,6 +284,7 @@ namespace InstagramInteraction
                             SaveCommentToFile(addingcmt, postFilePath);
                         }
                     }
+
                     catch(WebDriverTimeoutException)
                     {
                     }
