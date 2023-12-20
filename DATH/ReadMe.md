@@ -23,10 +23,19 @@
 - Tự động follow 1 danh sách User cho trước.
   
 ## **How to use**: Provide a way to install or clone/use.
-* Step 1: Clone this repository into your local computer by using this command (git required):
- https://github.com/HGB3009/IT008
-* Step 2: Go to the path ..\InstagramInteraction\bin\Debug\, then run the InstagramInteraction.exe file
-* Step 3 : Utilizing the Application Features:
+# Bước 1: Sao chép kho lưu trữ này vào máy tính cục bộ của bạn bằng cách sử dụng lệnh sau (yêu cầu Git):
+git clone https://github.com/HGB3009/IT008
+
+# Bước 2: Đi đến đường dẫn ..\InstagramInteraction\bin\Debug\net7.0-windows
+# Thay ".." bằng đường dẫn thực tế đến kho lưu trữ đã sao chép trên máy tính cục bộ của bạn.
+cd đường\đến\kho\lưu\trữ\đã\sao\chép\InstagramInteraction\bin\Debug\net7.0-windows
+
+# Chạy tệp InstagramInteraction.exe
+InstagramInteraction.exe
+
+# Bước 3: Sử dụng Các Tính Năng của Ứng Dụng:
+# Khám phá và sử dụng các tính năng khác nhau được cung cấp bởi ứng dụng dựa trên tài liệu hoặc hướng dẫn người dùng.
+# Tham khảo tài liệu của ứng dụng để biết hướng dẫn chi tiết về cách sử dụng các tính năng của nó.
 ## **Additional information**: 
 Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome.
 #### Lưu ý sử dụng lúc thiết bị có kết nối internet.
