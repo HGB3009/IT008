@@ -24,7 +24,9 @@
   
 ## **How to use**: Provide a way to install or clone/use.
 
-## **Additional information**: - Sử dụng công nghệ Selenium, Selunium Extra
+## **Additional information**: - 
+Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome.
+#### Lưu ý sử dụng lúc thiết bị có kết nối internet.
 
 ## **Code of conducting**:  
 Code of Conduct
