@@ -32,23 +32,23 @@ Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome
 #### Lưu ý sử dụng lúc thiết bị có kết nối internet.
 
 ## **Code of conducting**:  
-Code of Conduct
-Welcome to the Instagram Auto Tool project. In order to create a positive and supportive working environment, we have a Code of Conduct that all community members are expected to adhere to.
+Chào mừng bạn đến dự án Instagram Auto Tool. Để tạo ra một môi trường làm việc tích cực và hỗ trợ, chúng tôi có một Mã Nguyên Tắc Ứng Xử mà tất cả các thành viên cộng đồng đều cần tuân thủ.
 
-### Our Commitment
-* Respect: Everyone must be treated with respect, regardless of gender, marital status, sexual orientation, religion, ethnicity, age, physical ability, or any other factor.
-* Safety: We are committed to creating a safe environment for everyone, allowing them to feel comfortable to participate, share opinions, and learn.
-* Collaboration: We encourage collaboration and respect for diverse perspectives. Diversity is a valuable resource and adds value to the project.
-### All Contributions are Valued
-We encourage everyone to contribute to the community and add value to the project. All opinions are highly valued, and we are committed to creating favorable conditions for you to express your creativity.
-### Unacceptable Behavior
-The following behaviors are not acceptable within our community:
+### Cam Kết của Chúng Tôi
+* Tôn Trọng: Mọi người phải được đối xử với sự tôn trọng, không phụ thuộc vào giới tính, tình trạng hôn nhân, t orientationình dục, tôn giáo, dân tộc, tuổi tác, khả năng vận động, hoặc bất kỳ yếu tố nào khác.
+* An Toàn: Chúng tôi cam kết tạo ra một môi trường an toàn cho tất cả mọi người, giúp họ cảm thấy thoải mái để tham gia, chia sẻ ý kiến, và học hỏi.
+* Hợp Tác: Chúng tôi khuyến khích sự hợp tác và tôn trọng đối với các quan điểm đa dạng. Sự đa dạng là một nguồn lợi quý báu và thêm giá trị cho dự án.
+### Tất Cả Đóng Góp Đều Được Đánh Giá Cao
+Chúng tôi khuyến khích mọi người đóng góp vào cộng đồng và thêm giá trị cho dự án. Mọi ý kiến đều được đánh giá cao, và chúng tôi cam kết tạo điều kiện thuận lợi để bạn có thể thể hiện sự sáng tạo của mình.
+### Hành Vi Không Chấp Nhận
+Các hành vi sau đây không chấp nhận trong cộng đồng của chúng tôi:
 
-Harassment or bullying
-Hostile or threatening opinions
-Any behavior that may pose a danger to others or the organization
-### Reporting Violations
-If you witness any inappropriate behavior or a violation of the Code of Conduct, please report it to us
+
+* Quấy rối hoặc bắt nạt
+* Ý kiến thù địch hoặc đe dọa
+* Bất kỳ hành vi nào có thể đe dọa đến người khác hoặc tổ chức
+### Báo Cáo Vi Phạm
+Nếu bạn chứng kiến bất kỳ hành vi không thích hợp hoặc vi phạm Mã Nguyên Tắc Ứng Xử, vui lòng báo cáo cho chúng tôi
 ## **License**: MIT License
 
 Copyright (c) 2023 Instagram Interaction Tool
