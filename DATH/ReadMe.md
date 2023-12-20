@@ -23,7 +23,10 @@
 - Tự động follow 1 danh sách User cho trước.
   
 ## **How to use**: Provide a way to install or clone/use.
-
+* Step 1: Clone this repository into your local computer by using this command (git required):
+ https://github.com/HGB3009/IT008
+* Step 2: Go to the path ..\InstagramInteraction\bin\Debug\, then run the InstagramInteraction.exe file
+* Step 3 : Utilizing the Application Features:
 ## **Additional information**: 
 Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome.
 #### Lưu ý sử dụng lúc thiết bị có kết nối internet.
