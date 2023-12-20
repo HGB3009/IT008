@@ -26,8 +26,24 @@
 
 **Additional information**: - Sử dụng công nghệ Selenium, Selunium Extra
 
-**Code of conducting**: 
+**Code of conducting**:  
+Code of Conduct
+Welcome to the Instagram Auto Tool project. In order to create a positive and supportive working environment, we have a Code of Conduct that all community members are expected to adhere to.
 
+### Our Commitment
+* Respect: Everyone must be treated with respect, regardless of gender, marital status, sexual orientation, religion, ethnicity, age, physical ability, or any other factor.
+* Safety: We are committed to creating a safe environment for everyone, allowing them to feel comfortable to participate, share opinions, and learn.
+* Collaboration: We encourage collaboration and respect for diverse perspectives. Diversity is a valuable resource and adds value to the project.
+### All Contributions are Valued
+We encourage everyone to contribute to the community and add value to the project. All opinions are highly valued, and we are committed to creating favorable conditions for you to express your creativity.
+### Unacceptable Behavior
+The following behaviors are not acceptable within our community:
+
+Harassment or bullying
+Hostile or threatening opinions
+Any behavior that may pose a danger to others or the organization
+### Reporting Violations
+If you witness any inappropriate behavior or a violation of the Code of Conduct, please report it to us
 **License**: MIT License
 
 Copyright (c) 2023 Instagram Interaction Tool
