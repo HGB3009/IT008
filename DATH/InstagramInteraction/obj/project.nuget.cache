@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Mjx2u4AK38OgBoEgA8mX5zkVQPYLIWMiX5lKAZZ740rljJkNl5bUUeHmYyAzKqk/y6iRIf9hxFSeOlrc66vPWQ==",
+  "dgSpecHash": "prm0Yhg9ugP+TwGkJP7neZQoAuDzaf+DTHy0mHfftEqFYO30QYSha9Axv9FCMrBI5ynbIkby5V2/odlVd1dIBw==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\UniversityDocuments\\HocKi3\\IT008_LapTrinhTrucQuan\\DACUOIKY\\IT008\\DATH\\InstagramInteraction\\InstagramInteraction.csproj",
+  "projectFilePath": "D:\\OneDrive Data\\OneDrive - Trường ĐH CNTT - University of Information Technology\\HK3\\Visual Programming - IT008.O14\\Lab\\IT008\\DATH\\InstagramInteraction\\InstagramInteraction.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\baoba\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\selenium.support\\4.15.0\\selenium.support.4.15.0.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\selenium.webdriverbackedselenium\\4.1.0\\selenium.webdriverbackedselenium.4.1.0.nupkg.sha512",
-    "C:\\Users\\baoba\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+    "C:\\Users\\seter\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\selenium.support\\4.15.0\\selenium.support.4.15.0.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\selenium.webdriverbackedselenium\\4.1.0\\selenium.webdriverbackedselenium.4.1.0.nupkg.sha512",
+    "C:\\Users\\seter\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -45,7 +45,7 @@ Sử dụng công nghệ Selenium, Selenium Extra để truy cập driver chrome
 Chào mừng bạn đến dự án Instagram Auto Tool. Để tạo ra một môi trường làm việc tích cực và hỗ trợ, chúng tôi có một Mã Nguyên Tắc Ứng Xử mà tất cả các thành viên cộng đồng đều cần tuân thủ.
 
 ### Cam Kết của Chúng Tôi
-* Tôn Trọng: Mọi người phải được đối xử với sự tôn trọng, không phụ thuộc vào giới tính, tình trạng hôn nhân, t orientationình dục, tôn giáo, dân tộc, tuổi tác, khả năng vận động, hoặc bất kỳ yếu tố nào khác.
+* Tôn Trọng: Mọi người phải được đối xử với sự tôn trọng, không phụ thuộc vào giới tính, tình trạng hôn nhân, tình dục, tôn giáo, dân tộc, tuổi tác, khả năng vận động, hoặc bất kỳ yếu tố nào khác.
 * An Toàn: Chúng tôi cam kết tạo ra một môi trường an toàn cho tất cả mọi người, giúp họ cảm thấy thoải mái để tham gia, chia sẻ ý kiến, và học hỏi.
 * Hợp Tác: Chúng tôi khuyến khích sự hợp tác và tôn trọng đối với các quan điểm đa dạng. Sự đa dạng là một nguồn lợi quý báu và thêm giá trị cho dự án.
 ### Tất Cả Đóng Góp Đều Được Đánh Giá Cao
